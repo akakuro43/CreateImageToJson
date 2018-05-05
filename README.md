@@ -1,4 +1,4 @@
-# CreateImateToJson  
+# CreateImageToJson  
 画像からJsonデータを生成します。  
 作成下ピクセルデータはでダウンロード可能です。  
 (ダウンロード後に、JSON形式に整形して使用すると良いでしょう。)  
@@ -9,11 +9,9 @@
 ・node (7.8.0を使用)  
 ・gulp  
 
-## CreateImateToJsonで使用している主な技術
-・gulp  
-・pug  
-・sass  
-・babel  
+## CreateImageToJsonで使用している主な技術
+・canvas
+・create.js
 
 ## 使い方
-CreateImateToJson.jsを確認してください。
+CreateImageToJson.jsを確認してください。
