@@ -10,8 +10,8 @@
 ・gulp  
 
 ## CreateImageToJsonで使用している主な技術
-・canvas
-・create.js
+・canvas  
+・create.js  
 
 ## 使い方
 CreateImageToJson.jsを確認してください。
