@@ -1,0 +1,31 @@
+// @desc - デバイスごとのスタイル定義をする場合に使用する
+// @see - foundation/variable/_breakpoint.scss
+// @example scss - Usage
+// +media-desktop
+//   .text
+//     color: red
+// +media-mobile
+//   .text
+//     color: blue
+// .display-none {
+//   display: none;
+// }
+//
+// @media screen and (min-width: 768px) {
+//   .text {
+//     color: red;
+//   }
+// }
+// @media screen and (max-width: 767px) {
+//   .text {
+//     color: blue;
+//   }
+// }
+
+=media-desktop
+  @media #{inspect(map-get($breakpoint-up, md))}
+    @content
+
+=media-mobile
+  @media #{inspect(map-get($breakpoint-down, md))}
+    @content

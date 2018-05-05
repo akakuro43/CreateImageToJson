@@ -1,0 +1,30 @@
+@keyframes neonBox
+  0%
+    border: rgba($red,1) 3px solid
+    box-shadow: 0px 0px 15px $red, 0px 0px 15px $red inset
+  98%,100%
+    border: rgba($red,1) 3px solid
+    box-shadow: 0px 0px 40px $red, 0px 0px 40px $red inset
+@keyframes neonText
+  0%
+    // color: $red
+    // text-shadow: 0 0 1px $red
+    color: rgba($red,1)
+    text-shadow: 0 0 15px rgba($red,1)
+  98%,100%
+    // color: #ff0000
+    color: rgba($red,1)
+    text-shadow: 0px 0px 40px rgba(#dc0000,0.5), 0px 0px 120px rgba(#dc0000,1), 0px 0px 120px rgba(#dc0000,1), 0px 0px 120px rgba(#dc0000,1)
+@keyframes scrollLine
+  0%
+    transform-origin: top
+    transform: scaleY(0)
+  50%
+    transform-origin: top
+    transform: scaleY(1)
+  51%
+    transform-origin: bottom
+    transform: scaleY(1)
+  100%
+    transform-origin: bottom
+    transform: scaleY(0)

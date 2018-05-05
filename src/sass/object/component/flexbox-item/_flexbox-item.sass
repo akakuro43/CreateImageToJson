@@ -1,0 +1,81 @@
+// #Flexbox-item
+  --------------------------------------------------------------------------
+// doc
+  ---
+  title: flexbox-item
+  name: flexbox-item
+  categories: [component]
+  ---
+  flex-boxを使用し、コンテンツの横並びを制御するコンポーネントです。
+  ```block
+  <div class="c-flexbox">
+    <a href="" class="c-flexbox__item c-flexbox__item--col2or3" style="border:1px solid;">
+      <div class="c-flexbox__item-thumb">
+        <img src="../img/dummyImg.png" alt="">
+      </div>
+      <div class="c-flexbox__item-body">
+        <h2>title</h2>
+        <p>dummytextdummytextdummytextdummytextdummytextdummytext</p>
+      </div>
+    </a>
+    <a href="" class="c-flexbox__item c-flexbox__item--col2or3" style="border:1px solid;">
+      <div class="c-flexbox__item-thumb">
+        <img src="../img/dummyImg.png" alt="">
+      </div>
+      <div class="c-flexbox__item-body">
+        <h2>title</h2>
+        <p>dummytextdummytextdummytextdummytextdummytextdummytext</p>
+      </div>
+    </a>
+  </div>
+  ```
+@import "variable/_flexbox-item"
+@import "mixin/_flexbox-item"
+
+// flexbox-component
+.c-flexbox
+  display: flex
+  flex-wrap: wrap
+  justify-content: flex-start
+
+// flexbox-item
+.c-flexbox__item
+  width: 100%
+  display: block
+  color: #000
+
+// 1行に配置できるflexbox-itemの数を指定する（固定）
+  @dec - スマホサイズ（767以下）では１カラムとするが、それ以上のディスプレイ幅では1行に配置するカラム数を指定する。
+  「$flexbox-item-column-num」で作成する最大絡む数を指定する。（デフォルト:4）
+  @example -
+  [2カラムの場合]
+  .c-flexbox__item--col2 {
+    width: 48%;
+    margin-left: 4%;
+  }
+  [3カラムの場合]
+  .c-flexbox__item--col3 {
+    width: 30.66667%;
+    margin-left: 4%;
+  }
+  [4カラムの場合]
+  .c-flexbox__item--col4 {
+    width: 22%;
+    margin-left: 4%;
+  }
++make-flexbox-item-co1()
+
+// 1行に配置できるflexbox-itemの数をビューポートサイズによって変化する（可変）
++make-flexbox-item-co1-2or3(3, 'lg')
+
+// item-thumb:サムネイル部分
+.c-flexbox__item-thumb
+  overflow: hidden
+  & img
+    width: 100%
+
+// item-body:ボディ部分
+.c-flexbox__item-body
+  box-sizing: border-box
+  position: relative
+  word-break: break-word

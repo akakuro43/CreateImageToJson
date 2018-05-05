@@ -1,0 +1,30 @@
++media-desktop
+  .l-index-kv
+    position: relative
+    z-index: 520
+    height: 100vh
+
+    .l-index-kv__canvas
+      top: 0px
+      position: absolute
+      z-index: 2
+      overflow: hidden
+
+    #download
+      height: 40px
+      text-align: center
+      letter-spacing: 0.2em
+      line-height: 40px
+      +setEn()
+      font-size: 12px
+      width: 120px
+      background: #fff
+      position: absolute
+      top: 0
+      right: 0
+      z-index: 9999
+      transition: 0.4s ease
+      &:hover
+        background: #000
+        color: #fff
+        letter-spacing: 0.15em

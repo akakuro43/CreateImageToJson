@@ -1,0 +1,52 @@
+// @desc - flexboxを使用したアイテムを生成します。
+// @see - foundation/variable/_flexbox-item.scss
+=make-flexbox-item-co1($breakpoint: md)
+  @if map-has-key($breakpoint-up, $breakpoint)
+    @for $i from 1 through $flexbox-item-column-num
+      @if $i != 1
+        @media #{inspect(map-get($breakpoint-up, $breakpoint))}
+          // flexboxアイテムのwidthとmarginの設定
+
+          .c-flexbox__item--col#{$i}
+            width: (100% - ($i - 1) * $flexbox-item-margin) / $i
+            margin-left: $flexbox-item-margin
+
+          // 左端のflexboxアイテムのマージンを0にするわ
+          .c-flexbox__item--col#{$i}:nth-of-type(#{$i}n+1)
+            margin-left: 0
+  @else
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. " + "Please make sure it is defined in `$breakpoint-up` map."
+
+=make-flexbox-item-co1-2or3($col: 3, $breakpoint: lg)
+  $is-first: true
+
+  @while $col > 1
+    @if $is-first
+      $is-first: false
+
+      // 入力したブレイクポイントの場合（最初の一回目の場合）
+      @media #{inspect(map-get($breakpoint-up, $breakpoint))}
+        // flexboxアイテムのwidthとmarginの設定
+        .c-flexbox__item--col2or3
+          width: (100% - ($col - 1) * $flexbox-item-margin) / $col
+          margin-left: $flexbox-item-margin
+
+        // 左端のflexboxアイテムのマージンを0にするわ
+        .c-flexbox__item--col2or3:nth-of-type(#{$col}n+1)
+          margin-left: 0
+    @else
+      // 入力したブレイクポイントの以外場合
+      // 前のブレイクポイント名を取得する
+      $breakpoint: _breakpoint-prev($breakpoint)
+
+      @media #{inspect(map-get($breakpoint-between, $breakpoint))}
+        // flexboxアイテムのwidthとmarginの設定
+        .c-flexbox__item--col2or3
+          width: (100% - ($col - 1) * $flexbox-item-margin) / $col
+          margin-left: $flexbox-item-margin
+
+        // 左端のflexboxアイテムのマージンを0にするわ
+        .c-flexbox__item--col2or3:nth-of-type(#{$col}n+1)
+          margin-left: 0
+
+    $col: $col - 1
