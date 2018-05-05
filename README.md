@@ -1,6 +1,6 @@
 # CreateImateToJson  
 画像からJsonデータを生成します。  
-作成下ピクセルデータはでダウンロード可能です。
+作成下ピクセルデータはでダウンロード可能です。  
 (ダウンロード後に、JSON形式に整形して使用すると良いでしょう。)  
 
 ![馬](https://github.com/akakuro43/CreateImageToJson/blob/master/src/images/common/make_pixel_horse.jpg "馬")
